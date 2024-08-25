@@ -1,0 +1,147 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+
+:root {
+  --white-1: #ffffff;
+  --white-2: #fbfbfb;
+  --white-3: #f3f3f3;
+  --white-4: #eaeaea;
+  --white-5: #b5b5b5;
+  --white-6: #8f8f8f;
+  --black-1: #000000;
+  --black-2: #272727;
+  --black-3: #2f2f2f;
+  --red: #fa634e;
+  --green: #59bb1c;
+  --blue: #0066b0;
+}
+
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html,
+body,
+input,
+textarea {
+  font-family: "Poppins", sans-serif;
+  color: var(--black-2);
+}
+
+body {
+  overflow: overlay;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 3px;
+  background-color: var(--white-5);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.box {
+  background-color: var(--white-1);
+  width: max-content;
+  padding: 0.8rem;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 15px;
+}
+
+/* Tooltip */
+
+.tooltip {
+  position: relative;
+}
+
+.tooltip::before,
+.tooltip::after {
+  --scale: 0;
+  --arrow-size: 8px;
+  --tooltip-color: var(--white-2);
+  --color: var(--black-2);
+  position: absolute;
+  top: -0.25rem;
+  left: 50%;
+  transform: translateX(-50%) translateY(var(--translate-y, 0))
+    scale(var(--scale));
+  transition: 150ms transform;
+  transform-origin: bottom center;
+}
+
+.tooltip::before {
+  --translate-y: calc(-100% - var(--arrow-size));
+  content: attr(data-tooltip);
+  font-size: 1rem;
+  font-weight: 400;
+  color: var(--color);
+  padding: 0.5rem;
+  border-radius: 0.3rem;
+  text-align: center;
+  width: max-content;
+  /* max-width: 100%; */
+  background: var(--tooltip-color);
+  border: 0.5px solid var(--white-6);
+  pointer-events: none;
+}
+
+.tooltip:hover::before,
+.tooltip:hover::after {
+  --scale: 1;
+}
+
+.tooltip::after {
+  --translate-y: calc(-1 * var(--arrow-size));
+  content: "";
+  border: var(--arrow-size) solid transparent;
+  /* border-top-color: var(--tooltip-color); */
+  border-top-color: var(--black-2);
+  transform-origin: top center;
+}
+
+.sliderTrack {
+  background-color: var(--white-3);
+  height: 4px;
+}
+
+.sliderTrack-1 {
+  background-color: var(--white-5);
+  height: 4px;
+}
+
+.rdrDateDisplayWrapper {
+  background-color: transparent !important;
+}
+
+.rdrDateDisplayItem {
+  border: none !important;
+  background-color: transparent;
+}
+
+.rdrStartEdge,
+.rdrInRange,
+.rdrEndEdge {
+  background-color: var(--black-3) !important;
+}
+
+.green {
+  color: var(--green);
+}
+
+.red {
+  color: var(--red);
+}
+
+.recharts-tooltip-cursor {
+  fill: var(--white-3);
+}

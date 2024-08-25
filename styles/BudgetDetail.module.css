@@ -1,0 +1,87 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.content {
+  display: flex;
+  gap: 15px;
+}
+
+.left {
+  width: 50%;
+  height: max-content;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.transaction,
+.transactionHeader {
+  width: 100%;
+  display: flex;
+  border-radius: 5px;
+  padding: 0.3rem 0.5rem;
+  gap: 10px;
+}
+
+/* .transaction:hover {
+  background-color: var(--white-3);
+} */
+
+.date {
+  width: 20%;
+  min-width: 70px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.desc {
+  width: 65%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.money {
+  width: 10%;
+  min-width: 60px;
+  margin-left: auto;
+  text-align: end;
+  font-weight: 600;
+}
+
+.right {
+  width: 50%;
+  padding: 10px 10px 0 0;
+  height: 300px;
+}
+
+.transactionHeader {
+  background-color: #fafafa;
+  color: var(--white-6);
+  font-weight: 600;
+}
+
+.transactionHeader .date {
+  min-width: 70px;
+  display: flex;
+  align-items: center;
+}
+.transactionHeader .money {
+  display: flex;
+  align-items: center;
+}
+
+@media only screen and (max-width: 600px) {
+  .content {
+    flex-direction: column;
+  }
+
+  .right,
+  .left {
+    width: 100%;
+  }
+}
